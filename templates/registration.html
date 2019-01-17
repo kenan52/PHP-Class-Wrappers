@@ -1,0 +1,25 @@
+<div style="width:100%; height:100%; background-color: #222222; padding: 20px;">
+                <img style="width:400px; display: block; margin: 10px auto;" src="{{logotip}}" alt="{{logotip_alt}}">
+                <h1 style="color: white; text-align: center; margin: 20px;"> <span style="color: #33bdff;">{{name}}</span>, welcome to SomeName Application World!</h1>
+                <p style="color: white;"> We are very happy that you choose to enter the world of SomeName Applications. Before you start enjoying it,
+                please confirm your registration by clicking on the link below: </p>
+                <div style="width:100%; text-align: center;">
+                  <a href="{{registration_link}}" target="_blank" style="display: inline-block; margin: 10px; color:white; padding: 10px; font-weight: bold; text-align: center; font-size: 18px; text-decoration: none; background: #f1aa63;" >Link to confirmation</a>
+                  </div>
+                <p style="color:white;">Or you can copy this link to your browser, and confirm your email and your registration to our system: </p>
+                <p style="color: white!important;"><a href="#" style="color: #33bdff;; text-decoration: none;">{{registration_link}}</a></p> 
+               
+                <p style="color: white;"> Because we want for you to have all the information you entered to our system, here they are: </p>
+                <ul style="color: white; font-size: 12px;">
+                  <li>Your name: <span style="color: #33bdff;">{{name}}</span></li>
+                  <li>Phone number: <span style="color: #33bdff;">{{phone}}</span></li>
+                  <li>Email: <a href="mailto:{$email}" style="color: #33bdff!important; text-decoration: none!important;">{{email}}</a></li>
+                  <li style="color: white;"><strong>Your username: <span style="color: #33bdff;">{{username}}</span></strong> - You will need it for login </li>
+                  <li style="color: white;">Choosen language: <span style="color: #33bdff;">{{language}}</span></li>
+                </ul>
+                <p style="color: white;"> Time of registration: {{time}} {{date}}.</p>
+                <p style="color: white;">If you want to change some of the data, please go here: </p>
+                <div style="width:100%; text-align: center;">
+                  <a href="somename.ba/user.php?user_name={{username}}&user_email={{email}}&language={{language}}" target="_blank" style="display: inline-block; margin: 10px; color:white; padding: 10px; font-weight: bold; text-align: center; font-size: 18px; text-decoration: none; background: #f1aa63;">Edit Personal Informations</a>
+                </div>
+             </div>
