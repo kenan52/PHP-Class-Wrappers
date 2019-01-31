@@ -2,10 +2,10 @@
 
 /**
   * @author Amar Bešlija (Alfa Solutions)
-  *
+	*
   * Use this .php class to work with adding, updateing and deleting settings item in the globalSettings.json
   * globalSettings.json is hidden with .htaccess
-  *
+	*
   * @example: $array['data'] = array("hash"=>"ivanavoliamaraiamarvoliivanu"); -> data is first array, and everything else is underneath 
   */
 

@@ -1,7 +1,4 @@
 <?php
-/**
-  *@author Amar Bešlija (Alfa Solutions)
-  */
 
 /*** CAUTION ***
  * PLEASE, DON'T USE ' QUOTEMARK INSIDE TEMPLATES BECAUSE YOU WILL GET THE ERROR
@@ -145,8 +142,8 @@ echo $template;
 require "Settings.class.php";
 var_dump(Templater::set('<div style="width:100%; height:100%; background-color: #222222; padding: 20px;">
 	<img style="width:400px; display: block; margin: 10px auto;" src="{{logotip}}" alt="{{logotip_alt}}">
-	<h1 style="color: white; text-align: center; margin: 20px;"> <span style="color: #33bdff;">{{name}}</span>, welcome to appName Application World!</h1>
-	<p style="color: white;"> We are very happy that you choose to enter the world of appName Applications. Before you start enjoying it,
+	<h1 style="color: white; text-align: center; margin: 20px;"> <span style="color: #33bdff;">{{name}}</span>, welcome to Merhaba Application World!</h1>
+	<p style="color: white;"> We are very happy that you choose to enter the world of Merhaba Applications. Before you start enjoying it,
 	please confirm your registration by clicking on the link below: </p>
 	<div style="width:100%; text-align: center;">
 		<a href="{{registration_link}}" target="_blank" style="display: inline-block; margin: 10px; color:white; padding: 10px; font-weight: bold; text-align: center; font-size: 18px; text-decoration: none; background: #f1aa63;" >Link to confirmation</a>
@@ -165,7 +162,7 @@ var_dump(Templater::set('<div style="width:100%; height:100%; background-color: 
 	<p style="color: white;"> Time of registration: {{time}} {{date}}.</p>
 	<p style="color: white;">If you want to change some of the data, please go here: </p>
 	<div style="width:100%; text-align: center;">
-		<a href="appName.ba/user.php?user_name={{username}}&user_email={{email}}&language={{language}}" target="_blank" style="display: inline-block; margin: 10px; color:white; padding: 10px; font-weight: bold; text-align: center; font-size: 18px; text-decoration: none; background: #f1aa63;">Edit Personal Informations</a>
+		<a href="imerhaba.ba/userManagment.php?user_name={{username}}&user_email={{email}}&language={{language}}" target="_blank" style="display: inline-block; margin: 10px; color:white; padding: 10px; font-weight: bold; text-align: center; font-size: 18px; text-decoration: none; background: #f1aa63;">Edit Personal Informations</a>
 	</div>', 'something.html'));
 	
 */

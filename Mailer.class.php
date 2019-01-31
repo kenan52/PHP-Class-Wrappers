@@ -1,7 +1,5 @@
 <?php
-/**
-  *@author Amar Bešlija (Alfa Solutions)
-  */
+
 /* Namespace alias for PHPMailer */
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -106,12 +104,12 @@ class Mailer{
 			return self::$return;
 		}catch (Exception $e){
 			# Return PHPMailer Error
-		  self::$return['code'] = "303";
-			return self::$return;
+		  $return['code'] = "303";
+			return $return;
 		}catch (\Exception $e){
 			# Return PHPException Error
-			self::$return['code'] = "304";
-			return self::$return;
+			$return['code'] = "304";
+			return $return;
 		}
 		
 		
@@ -134,7 +132,7 @@ require 'Settings.class.php';
 require 'Database.class.php';
 require 'Templater.class.php';
 $template = Mailer::get("something.html");
-$template = Mailer::decode($template, ['name', 'email', 'logotip'], ['Amar Bešlija', 'amar@beslija.com', Settings::get('logotip')]);
+$template = Mailer::decode($template, ['name', 'email', 'logotip'], ['Amar Bešlija', 'amarbeslija13@gmail.com', Settings::get('logotip')]);
 echo ($template);
 */
 
@@ -145,7 +143,7 @@ require 'mailer/src/Exception.php';
 require 'mailer/src/PHPMailer.php';
 $template = Mailer::get("something.html");
 $template = Mailer::decode($template, ['name', 'email'], ['Amar Bešlija', 'amarbeslija13@gmail.com']);
-var_dump (Mailer::send(Settings::get('registration'), 'Amar Bešlija Test', 'amar@beslija.com', 'Amar Bešlija', 'Just a test', $template, TRUE));
+var_dump (Mailer::send(Settings::get('registration'), 'Amar Bešlija Test', 'amarbeslija13@gmail.com', 'Amar Bešlija', 'Just a test', $template, TRUE));
 */
 ?>
 

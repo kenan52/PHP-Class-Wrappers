@@ -1,0 +1,14 @@
+<div style="width:100%; height:100%; background-color: #222222; padding: 20px;">
+	<img style="width:200px; display: block; margin: 10px auto;" src="{{logotip}}" alt="{{logotip_alt}}">
+	<p style="color: white;">Hello, {{name}}. Recently you ordered password reset and username confirmation. We confirmed that it is you, so you can reset your password here in the next 60 minutes: </p>
+	<div style="width:100%; text-align: center;">
+		<a href="{{forgotten_link}}" target="_blank" style="display: inline-block; margin: 10px; color:white; padding: 10px; text-align: center; font-size: 18px; text-decoration: none; background: #ff8b41;" >Reset password</a>
+	</div>
+
+	<p style="color: white;"> You can find your email and username here: </p>
+	<ul style="color: white; font-size: 12px;">
+		<li>Email: <a href="mailto:{{email}}" style="color: #33bdff!important; text-decoration: none!important;">{{email}}</a></li>
+		<li style="color: white;"><strong>Your username: <span style="color: #33bdff;">{{username}}</span></strong> - You will need it for login </li>
+	</ul>
+	<p style="color: white;"> Time of sending: {{datetime}}.</p>
+</div>

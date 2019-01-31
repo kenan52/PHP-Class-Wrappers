@@ -223,13 +223,13 @@ class Imager extends \claviska\SimpleImage{
 
 /*** Testing: passed ***/
 
-
+/*
 $image = new Imager();
 $image->from("Screenshot.png", "assets/images/")->edit("resize", [1200])->resize(1000)->filter("opacity", [0.1])->export("file", "Screen", "assets/images/");
 $mime = $image->getMimeType();
 echo $mime;
 var_dump($image);
-
+*/
 
 
 

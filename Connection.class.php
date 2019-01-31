@@ -1,25 +1,25 @@
 <?php
 
-  /**
-    * @author Amar Bešlija (Alfa Solutions)
-    * 
-    * This is a Singleton-type class for connecting to the database
-    * It has two methods:
-    * instance() which returns the instance of our connection
-    * connect() which returns connection object for latter use
-    *
-    * @example How to create a connection:
-    * $instance = Connection::instance();
-    * $connection = $instance->connect();
-    */
+/**
+  * @author Amar Bešlija (Alfa Solutions)
+	* 
+	* This is a Singleton-type class for connecting to the database
+	* It has two methods:
+	* instance() which returns the instance of our connection
+	* connect() which returns connection object for latter use
+	*
+	* @example How to create a connection:
+	* $instance = Connection::instance();
+	* $connection = $instance->connect();
+	*/
 
 class Connection{
 	private static $instance = null;
 	private $connection;
 	
-	private $serverDB = "localhost";
-	private $usernameDB = "username";
-	private $passwordDB = "password";
+	private $serverDB = "mysql1005.mochahost.com";
+	private $usernameDB = "magicalb_superad";
+	private $passwordDB = "MindBreake130317101994!";
 	
 	private function __construct(){
 		$this->connection = new mysqli($this->serverDB, $this->usernameDB, $this->passwordDB);

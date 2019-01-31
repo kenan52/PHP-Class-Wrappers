@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 /**
   * @author Amar Bešlija (Alfa Solutions)
@@ -15,6 +15,7 @@ class File{
 	private static $return;
 	private static $get;
 	private static $set;
+	private static $delete;
 	
 	/*
 	 *** Function for setting the correct absolute path for the files ***
@@ -24,8 +25,8 @@ class File{
 	 ** $path (if we want to use custom folder on the server, otherwise that will be home path + self::$path stored here)
 	 */
 	public static function path($file, $path){
-		#Clear the variables
-		self::$path = "assets/json/";
+		# Clear the variables
+		self::$path = Settings::get('json_path');
 		self::$file = "";
 		self::$home = "";
 		# Get home path
@@ -76,7 +77,6 @@ class File{
 	 ** 400 - If success
 	 ** 402 - If we can't set the data
 	 */
-	
 	public static function set($file, $data, $json = true, $path = NULL){
 		try{
 			# Get path
@@ -95,6 +95,38 @@ class File{
 			return self::$return;
 		}
 	}
+
+	/*
+	 *** Function for deleting files ***
+	 * This function really delete file of our choice *
+	 * parameters:
+	 ** $file (filename to delete)
+	 ** $path (custom path if we don't want to use this one here)
+	 * returns:
+	 ** 400 - Success on deleting
+	 ** 402 - Can't delete file (probably doesn't exist)
+	 ** 403 - Exception, can't use whole method, file isn't deleted
+	 */
+	public static function delete($file, $path = NULL){
+		try{
+			# Get path
+			self::$delete = self::path($file, $path);
+			# Delete file
+			if(unlink(self::$delete)){
+				# Return success if we can set file
+				self::$return['code'] = "400";
+				return self::$return;	
+			}else{
+				# Return error if we can't set the file
+				self::$return['code'] = "402";
+				return self::$return;	
+			}
+		}catch(Exception $e){
+			# Return error if we can't delete the file
+			self::$return['code'] = "403";
+			return self::$return;		
+		}
+	}
 }
 
 /*** Testing: passed ***/
@@ -104,4 +136,22 @@ require "Settings.class.php";
 var_dump(File::get("globalSettings.json", true));
 var_dump(File::set("settings.json", "Moj sadržaj", false));
 */
+/*
+require "Settings.class.php";
+var_dump(File::delete("Screenshot (2).png", "assets/images/"));
+echo "ok";
+*/
+/* ZAVRŠITI OVE OPERACIJE DA ZNAMO ŠTA NAM JE APP POSLALA
+require "Settings.class.php";
+$array[] = md5("registration_confirmation");
+$array[] = md5("forgotten_confirmation");
+$array[] = md5("registration");
+$array[] = md5("login");
+$array[] = md5("forgotten");
+$array[] = md5("edit");
+$array[] = md5("insert");
+$array[] = md5("select")
+var_dump(File::set("operations.json", $array));
+*/
 ?>
+
